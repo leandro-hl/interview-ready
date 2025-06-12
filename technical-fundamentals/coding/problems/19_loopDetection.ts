@@ -24,4 +24,33 @@ export type Node<T> = {
 
 export default function detectLoop<T>(
   head: Node<T> | undefined,
-): Node<T> | null {}
+): Node<T> | undefined {
+  //Input: A->8->C->D->E-> C[thesameCasearlier] Output: C
+  //make the first collision
+  let s = head
+  let f = head
+
+  //loop detection
+  while(true) {
+    f = f?.next?.next
+    s = s?.next
+    if(s === f) {
+      break
+    }
+  }
+
+  if(!s && !f) {
+    return undefined
+  }
+
+  s = head
+  while(true) {
+    f = f?.next
+    s = s?.next
+    if(s === f) {
+      break
+    }
+  }
+
+  return s
+}

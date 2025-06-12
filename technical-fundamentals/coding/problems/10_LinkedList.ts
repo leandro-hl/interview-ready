@@ -11,12 +11,26 @@ export class LinkedList<T> {
   head: Node<T> | undefined;
   tail: Node<T> | undefined;
 
-  constructor(head?: Node<T>) {}
+  constructor(head?: Node<T>) {
+    this.head=head;
+    this.tail=head;
+  }
 
-  push(value: T) {}
+  push(value: T) {
+    const newNode: Node<T> = {value: value};
+    if(this.head === undefined) {
+      this.head=newNode
+      this.tail=newNode
+    } else {
+      if(this.tail) this.tail.next=newNode
+      this.tail = newNode
+    }
+  }
   filter() {}
   visit() {}
-  remove() {}
+  remove() {
+
+  }
   merge() {}
   print() {}
 
