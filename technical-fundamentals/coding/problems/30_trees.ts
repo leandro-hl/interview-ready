@@ -7,7 +7,11 @@ export type TreeNode<T> = {
 };
 
 export class Tree<T> {
-  bfs(node: TreeNode<T> | undefined, visit: (node: TreeNode<T>) => void) {}
+  bfs(node: TreeNode<T> | undefined, visit: (node: TreeNode<T>) => void) {
 
-  dfs(node: TreeNode<T> | undefined, visit: (node: TreeNode<T>) => void) {}
+  }
+
+  dfs(node: TreeNode<T> | undefined, visit: (node: TreeNode<T>) => void) {
+
+  }
 }
